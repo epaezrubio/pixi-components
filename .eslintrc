@@ -1,0 +1,75 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+  ],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/all",
+    "plugin:prettier/recommended",
+    "plugin:import/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-magic-numbers": "off",
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/no-type-alias": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          "sibling",
+          "index",
+          "internal",
+          "object",
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+        },
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "object",
+            "position": "after",
+          },
+        ],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
+      },
+    ],
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "typescript": {
+        "node": {
+            "paths": ["src"],
+        },
+        "alias": {
+          "map": [
+            ["@", "./src/"],
+          ],
+          "extensions": [".ts", ".js"],
+        }
+      }
+    },
+  },
+  "parserOptions": {
+    "project": [
+      "tsconfig.json"
+    ]
+  }
+}

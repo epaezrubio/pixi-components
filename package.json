@@ -1,0 +1,30 @@
+{
+  "name": "pixi-components",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.36",
+    "@typescript-eslint/eslint-plugin": "5.27.0",
+    "@typescript-eslint/parser": "5.27.0",
+    "eslint": "8.16.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-typescript": "2.7.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "pixi.js": "6.4.2",
+    "prettier": "2.6.2",
+    "typescript": "4.5.4",
+    "vite": "2.9.9",
+    "vitest": "0.13.0"
+  },
+  "dependencies": {
+    "@pixi/display": "6.4.2",
+    "@pixi/ticker": "6.4.2"
+  }
+}
