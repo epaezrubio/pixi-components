@@ -5,5 +5,8 @@ export function uninstallPlugin(): void {
   const prototype = DisplayObject.prototype as Partial<DisplayObject>;
 
   delete prototype.addComponent;
+  delete prototype.removeComponent;
+  delete prototype.getComponent;
+  delete prototype.getComponents;
   delete prototype.getAllComponents;
 }
