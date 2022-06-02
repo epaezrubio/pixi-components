@@ -11,6 +11,14 @@ export class Component<T extends DisplayObject = DisplayObject> {
     this._gameObject = value;
   }
 
+  public onAdded(): void {
+    /* noop */
+  }
+
+  public onRemoved(): void {
+    /* noop */
+  }
+
   public start(): void {
     /* noop */
   }
@@ -33,12 +41,14 @@ export class Component<T extends DisplayObject = DisplayObject> {
     }
 
     if (this.gameObject) {
+      this.onRemoved();
       this.removeObjectHooks(this.gameObject);
     }
 
     this.gameObject = gameObject;
 
     if (this.gameObject) {
+      this.onAdded();
       this.addObjectHooks(this.gameObject);
 
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, @typescript-eslint/strict-boolean-expressions
