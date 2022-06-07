@@ -9,9 +9,9 @@ import {
   vi,
 } from 'vitest';
 
-import { Component } from '@/components/Component';
-import { uninstallPlugin } from '@/plugin';
-import { installPlugin } from '@/plugin/installPlugin';
+import { Component } from '../../src/components/Component';
+import { uninstallPlugin } from '../../src/plugin';
+import { installPlugin } from '../../src/plugin/installPlugin';
 
 const onRemovedStub = vi.fn();
 

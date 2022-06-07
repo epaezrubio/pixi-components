@@ -1,9 +1,9 @@
 import { Container } from '@pixi/display';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { Component } from '@/components/Component';
-import { uninstallPlugin } from '@/plugin';
-import { installPlugin } from '@/plugin/installPlugin';
+import { Component } from '../../src/components/Component';
+import { uninstallPlugin } from '../../src/plugin';
+import { installPlugin } from '../../src/plugin/installPlugin';
 
 describe('getComponent', () => {
   beforeAll(() => {

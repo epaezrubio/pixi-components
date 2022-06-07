@@ -2,10 +2,10 @@ import { Container } from '@pixi/display';
 import { Ticker } from '@pixi/ticker';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { Component } from '@/components/Component';
-import { registerUpdateTicker } from '@/hooks/registerUpdateTicker';
-import { uninstallPlugin } from '@/plugin';
-import { installPlugin } from '@/plugin/installPlugin';
+import { Component } from '../../src/components/Component';
+import { registerUpdateTicker } from '../../src/hooks/registerUpdateTicker';
+import { uninstallPlugin } from '../../src/plugin';
+import { installPlugin } from '../../src/plugin/installPlugin';
 
 class TestComponent extends Component {
   public updateCalls = 0;
