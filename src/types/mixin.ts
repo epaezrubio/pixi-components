@@ -1,4 +1,4 @@
-import type { Component } from '@/components/Component';
+import type { Component } from '../components/Component';
 
 declare module '@pixi/display' {
   interface DisplayObject {

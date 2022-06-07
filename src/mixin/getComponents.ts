@@ -1,6 +1,6 @@
 import type { DisplayObject } from '@pixi/display';
 
-import type { Component } from '@/components/Component';
+import type { Component } from '../components/Component';
 
 export function getComponents<
   T extends Component,

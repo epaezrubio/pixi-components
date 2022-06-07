@@ -1,5 +1,5 @@
-import type { DisplayObject } from 'pixi.js';
+import type { DisplayObject } from '@pixi/display';
 
-import type { Component } from '@/components/Component';
+import type { Component } from '../components/Component';
 
 export const componentsMap = new WeakMap<DisplayObject, Component[]>();

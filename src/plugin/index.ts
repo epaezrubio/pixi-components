@@ -1,2 +1,2 @@
-export * from '@/plugin/installPlugin';
-export * from '@/plugin/uninstallPlugin';
+export * from '../plugin/installPlugin';
+export * from '../plugin/uninstallPlugin';

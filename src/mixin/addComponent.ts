@@ -1,7 +1,7 @@
 import type { DisplayObject } from '@pixi/display';
 
-import type { Component } from '@/components/Component';
-import { componentsMap } from '@/mixin/componentsMap';
+import type { Component } from '../components/Component';
+import { componentsMap } from '../mixin/componentsMap';
 
 export function addComponent(this: DisplayObject, component: Component): void {
   if (!componentsMap.has(this)) {

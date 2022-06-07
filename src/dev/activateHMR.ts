@@ -1,4 +1,4 @@
-import type { Component } from '@/components/Component';
+import type { Component } from '../components/Component';
 
 export function activateHMR(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

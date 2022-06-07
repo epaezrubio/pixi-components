@@ -1,7 +1,7 @@
 import type { DisplayObject } from '@pixi/display';
 
-import type { Component } from '@/components/Component';
-import { componentsMap } from '@/mixin/componentsMap';
+import type { Component } from '../components/Component';
+import { componentsMap } from '../mixin/componentsMap';
 
 export function removeComponent(
   this: DisplayObject,

@@ -1,1 +1,1 @@
-export * from '@/dev/activateHMR';
+export * from './activateHMR';

@@ -1,5 +1,5 @@
-import type { DisplayObject } from '@pixi/display';
-import type { Container, Ticker } from 'pixi.js';
+import type { DisplayObject, Container } from '@pixi/display';
+import type { Ticker } from '@pixi/ticker';
 
 function tickChildrenUpdate(
   object: Container | DisplayObject,

@@ -1,12 +1,24 @@
 {
   "name": "pixi-components",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "main": "dist/pixi-components.csj.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epaezrubio/pixi-components.git"
+  },
+  "author": {
+    "name": "Eduardo Paez Rubio",
+    "email": "contact@devpaezrubio.com",
+    "url": "https://devpaezrubio.com"
+  },
   "scripts": {
     "dev": "vite",
     "test": "vitest",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "npm run build:check && npm run build:declarations && vite build",
+    "build:check": "tsc --noEmit",
+    "build:declarations": "tsc --project tsconfig.declarations.json"
   },
   "devDependencies": {
     "@types/dat.gui": "0.7.7",
@@ -26,7 +38,10 @@
     "vitest": "0.13.0"
   },
   "dependencies": {
-    "@pixi/display": "6.4.2",
-    "@pixi/ticker": "6.4.2"
+    "@pixi/display": "^6.0.0",
+    "@pixi/ticker": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "vite": "2.9.9"
   }
 }

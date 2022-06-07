@@ -16,9 +16,6 @@
     "noImplicitReturns": true,
     "skipLibCheck": true,
     "baseUrl": "./",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
   },
-  "include": ["src", "demos", "tests", "vite.config.ts"]
+  "include": ["src", "types", "demos", "tests", "vite.config.ts"]
 }
