@@ -1,11 +1,12 @@
-import type { DisplayObject } from 'pixi.js';
 import { Container } from 'pixi.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { Component } from '../../src/components/Component';
 import { componentsMap } from '../../src/mixin/componentsMap';
 import { uninstallPlugin } from '../../src/plugin';
 import { installPlugin } from '../../src/plugin/installPlugin';
+import { TestComponent } from '../utils/TestComponent';
+
+import { GameObjectTestComponent } from 'tests/utils/GameObjectTestComponent';
 
 describe('addComponent', () => {
   beforeAll(() => {
@@ -24,7 +25,7 @@ describe('addComponent', () => {
 
   it.concurrent('should add components to list', () => {
     const object = new Container();
-    const component = new Component();
+    const component = new TestComponent();
 
     object.addComponent(component);
 
@@ -34,8 +35,8 @@ describe('addComponent', () => {
 
   it.concurrent('should add multiple components to one object', () => {
     const object = new Container();
-    const component1 = new Component();
-    const component2 = new Component();
+    const component1 = new TestComponent();
+    const component2 = new TestComponent();
 
     object.addComponent(component1);
     object.addComponent(component2);
@@ -46,8 +47,8 @@ describe('addComponent', () => {
   it.concurrent('should add multiple components to multiple objects', () => {
     const object1 = new Container();
     const object2 = new Container();
-    const component1 = new Component();
-    const component2 = new Component();
+    const component1 = new TestComponent();
+    const component2 = new TestComponent();
 
     object1.addComponent(component1);
     object2.addComponent(component2);
@@ -68,13 +69,7 @@ describe('addComponent', () => {
   it.concurrent('should add gameObject to component', () => {
     const object = new Container();
 
-    class TestComponent extends Component {
-      get pGameObject(): DisplayObject | undefined {
-        return this.gameObject;
-      }
-    }
-
-    const component = new TestComponent();
+    const component = new GameObjectTestComponent();
 
     expect(component.pGameObject).toBe(undefined);
 

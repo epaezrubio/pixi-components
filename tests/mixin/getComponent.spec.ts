@@ -1,9 +1,9 @@
 import { Container } from 'pixi.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { Component } from '../../src/components/Component';
 import { uninstallPlugin } from '../../src/plugin';
 import { installPlugin } from '../../src/plugin/installPlugin';
+import { TestComponent } from '../utils/TestComponent';
 
 describe('getComponent', () => {
   beforeAll(() => {
@@ -23,42 +23,42 @@ describe('getComponent', () => {
   it.concurrent('should get not components from object if not added', () => {
     const object = new Container();
 
-    expect(object.getComponent(Component)).toBeNull();
+    expect(object.getComponent(TestComponent)).toBeNull();
   });
 
   it.concurrent('should get components from object', () => {
     const object = new Container();
-    const component = new Component();
+    const component = new TestComponent();
 
     object.addComponent(component);
 
-    expect(object.getComponent(Component)).not.toBeNull();
+    expect(object.getComponent(TestComponent)).not.toBeNull();
   });
 
   it.concurrent('should get first component added of a type', () => {
     const object = new Container();
-    const component1 = new Component();
-    const component2 = new Component();
-    const component3 = new Component();
+    const component1 = new TestComponent();
+    const component2 = new TestComponent();
+    const component3 = new TestComponent();
 
     object.addComponent(component1);
     object.addComponent(component2);
     object.addComponent(component3);
 
-    expect(object.getComponent(Component)).toBe(component1);
+    expect(object.getComponent(TestComponent)).toBe(component1);
 
     object.removeComponent(component1);
-    expect(object.getComponent(Component)).toBe(component2);
+    expect(object.getComponent(TestComponent)).toBe(component2);
 
     object.removeComponent(component2);
-    expect(object.getComponent(Component)).toBe(component3);
+    expect(object.getComponent(TestComponent)).toBe(component3);
   });
 
   it.concurrent('should get component added of the given type', () => {
     const object = new Container();
 
-    class TestComponent1 extends Component {}
-    class TestComponent2 extends Component {}
+    class TestComponent1 extends TestComponent {}
+    class TestComponent2 extends TestComponent {}
 
     const component1 = new TestComponent1();
     const component2 = new TestComponent2();

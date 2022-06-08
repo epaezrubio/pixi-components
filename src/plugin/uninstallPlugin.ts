@@ -2,6 +2,15 @@
 // @ts-expect-error
 import { DisplayObject } from 'pixi.js';
 
+/**
+ * Removes the plugin methods from the DisplayObject prototype:
+ *
+ * - addComponent
+ * - removeComponent
+ * - getComponent
+ * - getComponents
+ * - getAllComponents
+ */
 export function uninstallPlugin(): void {
   /* eslint-disable @typescript-eslint/no-unsafe-assignment */
   /* eslint-disable @typescript-eslint/no-unsafe-member-access */

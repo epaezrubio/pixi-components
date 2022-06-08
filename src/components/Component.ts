@@ -1,8 +1,16 @@
 import type { DisplayObject } from 'pixi.js';
 
-export class Component<T extends DisplayObject = DisplayObject> {
+/**
+ * Base abstract class that provides the template for all derived components.
+ *
+ * @abstract
+ */
+export abstract class Component<T extends DisplayObject = DisplayObject> {
   private _gameObject: T | undefined;
 
+  /**
+   * Reference to the pixi object where this component has been added.
+   */
   public get gameObject(): T | undefined {
     return this._gameObject;
   }
@@ -11,29 +19,48 @@ export class Component<T extends DisplayObject = DisplayObject> {
     this._gameObject = value;
   }
 
+  /**
+   * Gets called when the component is added to an object, but before `start`.
+   */
   public onAdded(): void {
     /* noop */
   }
 
+  /**
+   * Gets called when the component is removed from an object.
+   */
   public onRemoved(): void {
     /* noop */
   }
 
+  /**
+   * Gets called when the object is added to a parent. If the component is added to an object when it already has a parent, this gets called after `onAdded`.
+   */
   public start(): void {
     /* noop */
   }
 
+  /**
+   * Gets called for each tick of the registered ticker as long as the object is a descendant of the registered root (typically app.stage)
+   *
+   * @param _deltaTime Duration in ms since last ticker update
+   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public update(_deltaTime: number): void {
     /* noop */
   }
 
+  /**
+   * Gets called when the object is removed from its parent.
+   */
   public onDestroy(): void {
     /* noop */
   }
 
   /**
-   * This function is not meant to be called by the user
+   * This function is for internal use and not meant to be called by the consumer.
+   *
+   * @private
    */
   public setGameObject(gameObject: T | undefined): void {
     if (gameObject === this.gameObject) {

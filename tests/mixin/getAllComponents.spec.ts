@@ -1,9 +1,9 @@
 import { Container } from 'pixi.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import { Component } from '../../src/components/Component';
 import { uninstallPlugin } from '../../src/plugin';
 import { installPlugin } from '../../src/plugin/installPlugin';
+import { TestComponent } from '../utils/TestComponent';
 
 describe('getAllComponents', () => {
   beforeAll(() => {
@@ -28,7 +28,7 @@ describe('getAllComponents', () => {
 
   it.concurrent('should get components from object', () => {
     const object = new Container();
-    const component = new Component();
+    const component = new TestComponent();
 
     object.addComponent(component);
 
@@ -37,9 +37,9 @@ describe('getAllComponents', () => {
 
   it.concurrent('should get components in order of addition', () => {
     const object = new Container();
-    const component1 = new Component();
-    const component2 = new Component();
-    const component3 = new Component();
+    const component1 = new TestComponent();
+    const component2 = new TestComponent();
+    const component3 = new TestComponent();
 
     object.addComponent(component1);
     object.addComponent(component2);

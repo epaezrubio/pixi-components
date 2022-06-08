@@ -1,5 +1,8 @@
 import type { DisplayObject, Container, Ticker } from 'pixi.js';
 
+/**
+ * Recursively iterates all children of the object originally registered as root and calls their update method.
+ */
 function tickChildrenUpdate(
   object: Container | DisplayObject,
   deltaTime: number,
@@ -19,8 +22,20 @@ function tickChildrenUpdate(
   }
 }
 
+/**
+ * Creates a binding between the application ticker and the components `update` hook.
+ *
+ * It registers a recursive loop that traverses all descendant objects of the object passed as `root`.
+ *
+ * In more advanced cases, this function can be called multiple times with one ticker and different `root` to avoid unnecesary iterations on objects that don't hold components.
+ *
+ * @param ticker Instance of the ticker that components will use as a `update` callback
+ * @param root Root object that transitively holds all descendant components (normally app.ticker or PIXI.Ticker.shared)
+ */
 export function registerUpdateTicker(ticker: Ticker, root: Container): void {
   ticker.add((deltaTime) => {
     tickChildrenUpdate(root, deltaTime);
   });
+
+  // TODO: Return function that unregister the ticker callback
 }
