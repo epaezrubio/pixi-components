@@ -1,7 +1,7 @@
 {
   "name": "pixi-components",
   "version": "1.0.0",
-  "main": "dist/pixi-components.csj.js",
+  "main": "dist/pixi-components.cjs.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,9 +12,12 @@
     "email": "contact@devpaezrubio.com",
     "url": "https://devpaezrubio.com"
   },
+  "types": "@types/main.d.ts",
+  "files": ["dist", "@types"],
   "scripts": {
     "dev": "vite",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
     "preview": "vite preview",
     "build": "npm run build:check && npm run build:declarations && vite build",
     "build:check": "tsc --noEmit",

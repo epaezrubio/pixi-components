@@ -2,9 +2,9 @@ import * as dat from 'dat.gui';
 import type { Container, InteractionEvent } from 'pixi.js';
 import { Application, Sprite, Texture } from 'pixi.js';
 
-import { Component } from '@/components/Component';
-import { registerUpdateTicker } from '@/hooks/registerUpdateTicker';
-import { installPlugin } from '@/plugin/installPlugin';
+import { Component } from '../../src/components/Component';
+import { registerUpdateTicker } from '../../src/hooks/registerUpdateTicker';
+import { installPlugin } from '../../src/plugin/installPlugin';
 
 const app = new Application({
   width: window.innerWidth,
