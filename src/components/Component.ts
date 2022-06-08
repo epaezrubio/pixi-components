@@ -1,4 +1,4 @@
-import type { DisplayObject } from '@pixi/display';
+import type { DisplayObject } from 'pixi.js';
 
 export class Component<T extends DisplayObject = DisplayObject> {
   private _gameObject: T | undefined;

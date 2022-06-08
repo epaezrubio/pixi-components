@@ -17,5 +17,5 @@
     "skipLibCheck": true,
     "baseUrl": "./",
   },
-  "include": ["src", "types", "demos", "tests", "vite.config.ts"]
+  "include": ["src", "types", "demos", "tests", "vite.config.ts", "vitest.config.ts"]
 }

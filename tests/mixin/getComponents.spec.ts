@@ -1,4 +1,4 @@
-import { Container } from '@pixi/display';
+import { Container } from 'pixi.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { Component } from '../../src/components/Component';

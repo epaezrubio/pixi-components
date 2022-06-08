@@ -1,5 +1,4 @@
-import type { DisplayObject, Container } from '@pixi/display';
-import type { Ticker } from '@pixi/ticker';
+import type { DisplayObject, Container, Ticker } from 'pixi.js';
 
 function tickChildrenUpdate(
   object: Container | DisplayObject,
@@ -20,10 +19,7 @@ function tickChildrenUpdate(
   }
 }
 
-export function registerUpdateTicker(
-  ticker: Ticker,
-  root: DisplayObject,
-): void {
+export function registerUpdateTicker(ticker: Ticker, root: Container): void {
   ticker.add((deltaTime) => {
     tickChildrenUpdate(root, deltaTime);
   });

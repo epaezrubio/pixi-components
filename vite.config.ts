@@ -9,8 +9,9 @@ export default defineConfig({
       name: 'pixi-components',
       formats: ['cjs', 'es', 'umd'],
     },
+    sourcemap: true,
     rollupOptions: {
-      external: ['@pixi/display', '@pixi/ticker'],
+      external: ['pixi.js'],
     },
   },
   plugins: [],

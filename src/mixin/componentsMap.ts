@@ -1,4 +1,4 @@
-import type { DisplayObject } from '@pixi/display';
+import type { DisplayObject } from 'pixi.js';
 
 import type { Component } from '../components/Component';
 
