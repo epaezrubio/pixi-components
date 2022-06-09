@@ -1,2 +1,3 @@
-export * from '../plugin/installPlugin';
-export * from '../plugin/uninstallPlugin';
+export * from './installPlugin';
+export * from './uninstallPlugin';
+export * as symbols from './symbols';

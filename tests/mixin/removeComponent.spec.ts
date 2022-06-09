@@ -4,9 +4,8 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { componentsMap } from '../../src/mixin/componentsMap';
 import { uninstallPlugin } from '../../src/plugin';
 import { installPlugin } from '../../src/plugin/installPlugin';
+import { GameObjectTestComponent } from '../utils/GameObjectTestComponent';
 import { TestComponent } from '../utils/TestComponent';
-
-import { GameObjectTestComponent } from 'tests/utils/GameObjectTestComponent';
 
 describe('removeComponent', () => {
   beforeAll(() => {
