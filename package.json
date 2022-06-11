@@ -26,9 +26,9 @@
     "build": "npm run build:check && npm run build:declarations && vite build",
     "build:check": "tsc --noEmit",
     "build:declarations": "tsc --project tsconfig.declarations.json",
-    "release:major": "node ./scripts/generate-changelog.js major && git add CHANGELOG.md && npm version major -f",
-    "release:minor": "node ./scripts/generate-changelog.js minor && git add CHANGELOG.md && npm version minor -f",
-    "release:patch": "node ./scripts/generate-changelog.js patch && git add CHANGELOG.md && npm version patch -f"
+    "release:major": "node ./scripts/generate-changelog.js major && git add CHANGELOG.md CHANGELOG_VERSION.md && npm version major -f",
+    "release:minor": "node ./scripts/generate-changelog.js minor && git add CHANGELOG.md CHANGELOG_VERSION.md && npm version minor -f",
+    "release:patch": "node ./scripts/generate-changelog.js patch && git add CHANGELOG.md CHANGELOG_VERSION.md && npm version patch -f"
   },
   "devDependencies": {
     "@types/dat.gui": "0.7.7",
