@@ -1,0 +1,25 @@
+# This workflow will create a release after a tag has been pushed
+
+name: Github release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm run test
+      - run: npm run build
+      - uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}/VERSION_CHANGELOG.md
+          files: |
+            dist/*
+            LICENSE

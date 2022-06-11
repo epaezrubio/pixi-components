@@ -25,7 +25,10 @@
     "preview": "vite preview",
     "build": "npm run build:check && npm run build:declarations && vite build",
     "build:check": "tsc --noEmit",
-    "build:declarations": "tsc --project tsconfig.declarations.json"
+    "build:declarations": "tsc --project tsconfig.declarations.json",
+    "release:major": "node ./scripts/generate-changelog.js major && git add CHANGELOG.md && npm version major -f",
+    "release:minor": "node ./scripts/generate-changelog.js minor && git add CHANGELOG.md && npm version minor -f",
+    "release:patch": "node ./scripts/generate-changelog.js patch && git add CHANGELOG.md && npm version patch -f"
   },
   "devDependencies": {
     "@types/dat.gui": "0.7.7",
@@ -39,6 +42,8 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.6.2",
+    "semver": "7.3.7",
+    "simple-git": "3.7.1",
     "typescript": "4.5.4",
     "vite": "2.9.9",
     "vitest": "0.13.0"
