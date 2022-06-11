@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+### Fixed
+- Fix GitHub release action (803898d1b0adf189012d03867ca71381f7c60c4c)
+
 ## 1.3.0
 ### Added
 - Add release creation GitHub workflow (6cb6fdf460e31c2c79ebc0e51b3bbef5c663b02a)
