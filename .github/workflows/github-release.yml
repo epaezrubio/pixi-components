@@ -1,4 +1,4 @@
-# This workflow will create a release after a tag has been pushed
+# This workflow will create a release and publish to NPM after a tag has been pushed
 
 name: Github release
 
@@ -27,3 +27,6 @@ jobs:
           files: |
             dist/*
             LICENSE
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
