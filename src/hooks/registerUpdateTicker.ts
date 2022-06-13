@@ -31,11 +31,19 @@ function tickChildrenUpdate(
  *
  * @param ticker Instance of the ticker that components will use as a `update` callback
  * @param root Root object that transitively holds all descendant components (normally app.ticker or PIXI.Ticker.shared)
+ * @returns Callback to unregister this ticker
  */
-export function registerUpdateTicker(ticker: Ticker, root: Container): void {
-  ticker.add((deltaTime) => {
+export function registerUpdateTicker(
+  ticker: Ticker,
+  root: Container,
+): () => void {
+  function tickerCallback(deltaTime: number): void {
     tickChildrenUpdate(root, deltaTime);
-  });
+  }
 
-  // TODO: Return function that unregister the ticker callback
+  ticker.add(tickerCallback);
+
+  return () => {
+    ticker.remove(tickerCallback);
+  };
 }
