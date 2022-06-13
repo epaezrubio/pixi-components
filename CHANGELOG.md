@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+### Added
+- Add callback to remove registered tickers (79c291c42802e68ceb5b2943927d41e89f8bdbaf)
+
 ## 1.3.3
 ### Added
 - Add categorization during changelog generation (9ff9e5047f027276fe006a87006a8b9e1f22b4f7)
