@@ -1,5 +1,9 @@
 # pixi-components
 
+[![Project check](https://github.com/epaezrubio/pixi-components/actions/workflows/project-check.yaml/badge.svg)](https://github.com/epaezrubio/pixi-components/actions/workflows/project-check.yaml)
+[![codecov](https://codecov.io/gh/epaezrubio/pixi-components/branch/master/graph/badge.svg?token=AZKGT9U2NO)](https://codecov.io/gh/epaezrubio/pixi-components)
+[![npm version](https://badge.fury.io/js/pixi-components.svg)](https://badge.fury.io/js/pixi-components)
+
 A pixi.js plugin that adds methods for a component-based architecture in pixi. It has a very similar API like Unity's GameObject and MonoBehaviour.
 
 The motivation behind this approach is to create single-responsibility components that are easier to reuse, test and debug. On top of that, it enables development experience features like __hot module replacement__ (with limitations).

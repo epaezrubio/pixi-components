@@ -16,6 +16,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run test
+      - uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/cobertura-coverage.xml
 
   build:
     runs-on: ubuntu-latest
