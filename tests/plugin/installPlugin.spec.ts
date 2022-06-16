@@ -3,7 +3,7 @@
 import { DisplayObject } from 'pixi.js';
 import { describe, expect, it } from 'vitest';
 
-import { installPlugin, uninstallPlugin } from '../../src/plugin';
+import { installPlugin, uninstallPlugin, symbols } from '../../src/plugin';
 import {
   addComponent as addComponentSymbol,
   removeComponent as removeComponentSymbol,
@@ -11,6 +11,12 @@ import {
   getComponents as getComponentsSymbol,
   getAllComponents as getAllComponentsSymbol,
 } from '../../src/plugin/symbols';
+
+describe('symbols', () => {
+  it('should be exported', () => {
+    expect(symbols).toBeDefined();
+  });
+});
 
 describe('installPlugin', () => {
   /* eslint-disable @typescript-eslint/no-unsafe-assignment */

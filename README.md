@@ -16,7 +16,7 @@ npm install pixi-components
 
 The plugin needs to be installed manually and bound to the application ticker:
 
-```
+```typescript
 import { installPlugin } from 'pixi-components';
 
 installPlugin();
@@ -25,7 +25,7 @@ registerUpdateTicker(app.ticker, app.stage);
 
 ## Example
 
-```ts
+```typescript
 class RotateComponent extends Component {
   speed: number;
 
