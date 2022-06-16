@@ -6,6 +6,11 @@ import type { DisplayObject } from 'pixi.js';
  * @abstract
  */
 export abstract class Component<T extends DisplayObject = DisplayObject> {
+  /**
+   * Enabled components are updated on each tick, disabled components are not.
+   */
+  public enabled = true;
+
   private _gameObject: T | undefined;
 
   /**

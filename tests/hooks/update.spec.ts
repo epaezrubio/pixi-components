@@ -1,5 +1,4 @@
-import { Container } from 'pixi.js';
-import { Ticker } from '@pixi/ticker';
+import { Container, Ticker } from 'pixi.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { Component } from '../../src/components/Component';
@@ -102,5 +101,27 @@ describe('update hook', () => {
     ticker.update();
     expect(component1.updateCalls).toBe(2);
     expect(component2.updateCalls).toBe(1);
+  });
+
+  it.concurrent('should tick only enabled components', () => {
+    const container = new Container();
+    const component = new TestComponent();
+    const ticker = new Ticker();
+
+    container.addComponent(component);
+    registerUpdateTicker(ticker, container);
+
+    ticker.update();
+    expect(component.updateCalls).toBe(1);
+
+    component.enabled = false;
+
+    ticker.update();
+    expect(component.updateCalls).toBe(1);
+
+    component.enabled = true;
+
+    ticker.update();
+    expect(component.updateCalls).toBe(2);
   });
 });

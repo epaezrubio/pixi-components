@@ -10,6 +10,10 @@ function tickChildrenUpdate(
   const components = object.getAllComponents();
 
   for (const component of components) {
+    if (!component.enabled) {
+      continue;
+    }
+
     component.update(deltaTime);
   }
 
