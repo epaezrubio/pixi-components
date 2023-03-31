@@ -10,7 +10,7 @@ export class RotateComponent extends Component {
     this.speed = speed;
 
     if (import.meta.hot) {
-      import.meta.hot.accept((newModule: Record<string, unknown>) => {
+      import.meta.hot.accept((newModule) => {
         activateHMR(newModule, this, this.speed);
       });
     }
