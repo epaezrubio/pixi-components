@@ -1,2 +1,2 @@
 ### Updated
-- Update package dependencies to support pixi.js >= 7 (6681f11d99532cc2a71243ee88c90a12e659e018)
+- Fix Vite vulnerability upgrading to latest version (02f87fb338b99ab35114f5904ea75b9dc01d8adb)
