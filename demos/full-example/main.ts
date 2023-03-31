@@ -1,12 +1,12 @@
 import * as dat from 'dat.gui';
-import type { Container, InteractionEvent } from 'pixi.js';
+import type { Container, FederatedPointerEvent } from 'pixi.js';
 import { Application, Sprite, Texture } from 'pixi.js';
 
 import { Component } from '../../src/components/Component';
 import { registerUpdateTicker } from '../../src/hooks/registerUpdateTicker';
 import { installPlugin } from '../../src/plugin/installPlugin';
 
-const app = new Application({
+const app = new Application<HTMLCanvasElement>({
   width: window.innerWidth,
   height: window.innerHeight,
 });
@@ -101,12 +101,11 @@ class FollowCursorComponent extends Component {
   }
 
   public onAdded(): void {
-    app.stage.interactive = true;
-    app.stage.on('pointermove', this.onMouseMove);
+    app.stage.on('globalpointermove', this.onMouseMove);
   }
 
   public onRemoved(): void {
-    app.stage.off('pointermove', this.onMouseMove);
+    app.stage.off('globalpointermove', this.onMouseMove);
   }
 
   public update(): void {
@@ -122,7 +121,8 @@ class FollowCursorComponent extends Component {
     this.gameObject.position.set(targetX, targetY);
   }
 
-  private readonly onMouseMove = (event: InteractionEvent): void => {
+  private readonly onMouseMove = (event: FederatedPointerEvent): void => {
+    console.log(event);
     const point = event.data.getLocalPosition(app.stage);
 
     this.x = point.x;
@@ -145,6 +145,8 @@ bunny2.position.set(app.renderer.width / 2 + 20, app.renderer.height / 2);
 
 app.stage.addChild(bunny1);
 app.stage.addChild(bunny2);
+
+app.stage.eventMode = 'static';
 
 const gui = new dat.GUI();
 gui.domElement.style.opacity = '0.9';

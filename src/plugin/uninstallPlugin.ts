@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-expect-error
 import { DisplayObject } from 'pixi.js';
 
 import {
@@ -20,22 +18,20 @@ import {
  * - getAllComponents
  */
 export function uninstallPlugin(): void {
-  /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-  /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-  // @ts-expect-error
-  const prototype = DisplayObject.prototype;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+  const prototype = DisplayObject.prototype as any;
 
-  /* eslint-disable @typescript-eslint/no-dynamic-delete */
+  /* eslint-disable @typescript-eslint/no-dynamic-delete, @typescript-eslint/no-unsafe-member-access */
   delete prototype[addComponentSymbol];
   delete prototype[removeComponentSymbol];
   delete prototype[getComponentSymbol];
   delete prototype[getComponentsSymbol];
   delete prototype[getAllComponentsSymbol];
-  /* eslint-enable @typescript-eslint/no-dynamic-delete */
 
   delete prototype.addComponent;
   delete prototype.removeComponent;
   delete prototype.getComponent;
   delete prototype.getComponents;
   delete prototype.getAllComponents;
+  /* eslint-enable @typescript-eslint/no-dynamic-delete, @typescript-eslint/no-unsafe-member-access */
 }

@@ -14,6 +14,8 @@ The motivation behind this approach is to create single-responsibility component
 npm install pixi-components
 ```
 
+This version is compatible with `pixi.js >= 7.0.0`. For compatibility with `pixi.js >= 6.0.0` install `pixi-components@^1.7.0`
+
 The plugin needs to be installed manually and bound to the application ticker:
 
 ```typescript

@@ -1,4 +1,5 @@
-import type { DisplayObject, Container, Ticker } from 'pixi.js';
+import { DisplayObject } from 'pixi.js';
+import type { Container, Ticker } from 'pixi.js';
 
 /**
  * Recursively iterates all children of the object originally registered as root and calls their update method.
@@ -17,11 +18,15 @@ function tickChildrenUpdate(
     component.update(deltaTime);
   }
 
-  if (!('children' in object)) {
+  if (!('children' in object) || !object.children) {
     return;
   }
 
   for (const child of object.children) {
+    if (!(child instanceof DisplayObject)) {
+      continue;
+    }
+
     tickChildrenUpdate(child, deltaTime);
   }
 }

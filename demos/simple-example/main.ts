@@ -4,7 +4,7 @@ import { Component } from '../../src/components/Component';
 import { registerUpdateTicker } from '../../src/hooks/registerUpdateTicker';
 import { installPlugin } from '../../src/plugin/installPlugin';
 
-const app = new Application({
+const app = new Application<HTMLCanvasElement>({
   width: window.innerWidth,
   height: window.innerHeight,
 });

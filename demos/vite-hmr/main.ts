@@ -5,7 +5,7 @@ import { installPlugin } from '../../src/plugin/installPlugin';
 
 import { RotateComponent } from './RotateComponent';
 
-const app = new Application({
+const app = new Application<HTMLCanvasElement>({
   width: window.innerWidth,
   height: window.innerHeight,
 });

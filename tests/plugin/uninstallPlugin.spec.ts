@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import { DisplayObject } from 'pixi.js';
 import { describe, expect, it } from 'vitest';
 
@@ -16,9 +14,8 @@ describe('uninstallPlugin', () => {
   /* eslint-disable @typescript-eslint/no-unsafe-assignment */
   /* eslint-disable @typescript-eslint/no-unsafe-member-access */
   describe('DisplayObject prototype', () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    const prototype = DisplayObject.prototype;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+    const prototype = DisplayObject.prototype as any;
 
     it('should remove symbol methods', () => {
       installPlugin();

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-expect-error
 import { DisplayObject } from 'pixi.js';
 
 import { addComponent } from '../mixin/addComponent';
@@ -40,11 +38,10 @@ import {
  * @param symbolsOnly Install methods as symbols only or as named properties too
  */
 export function installPlugin(symbolsOnly = false): void {
-  /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-  /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-  // @ts-expect-error
-  const prototype = DisplayObject.prototype;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+  const prototype = DisplayObject.prototype as any;
 
+  /* eslint-disable @typescript-eslint/no-unsafe-member-access */
   prototype[addComponentSymbol] = addComponent;
   prototype[removeComponentSymbol] = removeComponent;
   prototype[getComponentSymbol] = getComponent;
@@ -60,4 +57,5 @@ export function installPlugin(symbolsOnly = false): void {
   prototype.getComponent = getComponent;
   prototype.getComponents = getComponents;
   prototype.getAllComponents = getAllComponents;
+  /* eslint-enable @typescript-eslint/no-unsafe-member-access */
 }
