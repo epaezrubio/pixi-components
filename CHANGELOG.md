@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.0
+### Updated
+- Update package dependencies to support pixi.js >= 7 (6681f11d99532cc2a71243ee88c90a12e659e018)
+
+
 ## 1.7.0
 ### Added
 - Add isInstalled method (058de670a8ce7a8ddef4a636b9fa3d9063aa7ef6)

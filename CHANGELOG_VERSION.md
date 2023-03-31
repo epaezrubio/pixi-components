@@ -1,3 +1,2 @@
-### Added
-- Add isInstalled method (058de670a8ce7a8ddef4a636b9fa3d9063aa7ef6)
-- Improve package metadata (2b6c2524ed813501ab20c9e320f8a13f12a3a3e7)
+### Updated
+- Update package dependencies to support pixi.js >= 7 (6681f11d99532cc2a71243ee88c90a12e659e018)
