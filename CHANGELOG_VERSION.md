@@ -1,2 +1,2 @@
-### Updated
-- Fix Vite vulnerability upgrading to latest version (02f87fb338b99ab35114f5904ea75b9dc01d8adb)
+### Fixed
+- Fix missing export (6211edfc24e58b550304a681525c80cb60d8de73)
